@@ -1,18 +1,20 @@
-var binaryRain = document.querySelector(".binary-rain");
+function createBinarydrop() {
+    var binarydrop = document.createElement("img");
+    binarydrop.className = "binarydrop";
+    binarydrop.style.left = Math.random() * window.innerWidth + "px";
 
-function createBinary() {
-    var binaryElement = document.createElement("span");
-    binaryElement.className = "binary";
-    binaryElement.innerText = Math.round(Math.random());
-    binaryElement.style.left = Math.random() * 100 + "vw";
-    binaryElement.style.top = "-10px"; 
-    binaryRain.appendChild(binaryElement);
+    var randomImage = Math.floor(Math.random() * 3) + 1;
+    binarydrop.src = "./img/binary"+randomImage+".jpg";
+
+    document.body.appendChild(binarydrop);
 
     setTimeout(function () {
-        binaryElement.remove();
-    }, 4000);
+        binarydrop.remove();
+    }, 30000);
 }
 
-function startRain() {
-    setInterval(createBinary, 150);
+function startDrop() {
+    setInterval(createBinarydrop, 2000);
 }
+
+startDrop();

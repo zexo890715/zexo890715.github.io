@@ -5,6 +5,7 @@ function createBinary() {
     binaryElement.className = "binary";
     binaryElement.innerText = Math.round(Math.random());
     binaryElement.style.left = Math.random() * 100 + "vw";
+    binaryElement.style.top = "-10px"; 
     binaryRain.appendChild(binaryElement);
 
     setTimeout(function () {
@@ -15,5 +16,3 @@ function createBinary() {
 function startRain() {
     setInterval(createBinary, 150);
 }
-
-startRain();
